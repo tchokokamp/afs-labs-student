@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-deployment
+  name: db-deployment
   namespace: ptchokokam
   labels:
-    app: app
+    app: db
 spec:
   replicas: 1
   strategy:
@@ -12,17 +12,17 @@ spec:
   minReadySeconds: 20
   selector:
     matchLabels:
-      app: app
+      app: db
   template:
     metadata:
       labels:
-        app: app
+        app: db
     spec:
       containers:
       - envFrom:
         - secretRef:
             name: db-secret
-        name: app-deployment
-        image: harbor.dev.afsmtddso.com/ptchokokam-harbor-project/app:971c881-ab40560
+        name: db-deployment
+        image: harbor.dev.afsmtddso.com/ptchokokam-harbor-project/db@sha256:8a42cc70144996db971f5298394a4ed5d230cfc50cf14d3d4394c98768bb0484
         ports:
-        - containerPort: 5000
+        - containerPort: 5432
