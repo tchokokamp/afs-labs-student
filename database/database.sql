@@ -1,4 +1,4 @@
---
+-- database deployment
 -- PostgreSQL database dump
 --
 
