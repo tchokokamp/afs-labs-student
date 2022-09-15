@@ -1,4 +1,5 @@
--- database deployment
+-- database deployment to pipeline
+-- deployment
 -- PostgreSQL database dump
 --
 
